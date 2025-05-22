@@ -1,12 +1,13 @@
 class MinStack:
-
+    # stack with minimum tuple 
+    # TC: O(1) SC: O(n)
     def __init__(self):
         self.stack = []
         self.minimum = float('inf')
         
     def push(self, val: int) -> None:
         self.minimum = min(self.minimum, val)
-        self.stack.append([val, self.minimum])
+        self.stack.append([val, self.minimum]) # make data structure such that each element has [value, minimum value at the time]
 
     def pop(self) -> None:
         self.stack.pop()
